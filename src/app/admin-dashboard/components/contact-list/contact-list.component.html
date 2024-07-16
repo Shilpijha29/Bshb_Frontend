@@ -1,0 +1,54 @@
+<h2>Contact List</h2>
+
+<form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" required [(ngModel)]="contact.name" name="name" #name="ngModel">
+    <div *ngIf="name.invalid && name.dirty" class="error">Name is required</div>
+  </div>
+  <div>
+    <label for="department">Department</label>
+    <input type="text" id="department" required [(ngModel)]="contact.department" name="department" #department="ngModel">
+    <div *ngIf="department.invalid && department.dirty" class="error">Department is required</div>
+  </div>
+  <div>
+    <label for="designation">Designation</label>
+    <input type="text" id="designation" required [(ngModel)]="contact.designation" name="designation" #designation="ngModel">
+    <div *ngIf="designation.invalid && designation.dirty" class="error">Designation is required</div>
+  </div>
+  <div>
+    <label for="phone">Phone</label>
+    <input type="text" id="phone" required [(ngModel)]="contact.phone" name="phone" #phone="ngModel">
+    <div *ngIf="phone.invalid && phone.dirty" class="error">Phone is required</div>
+  </div>
+  <button type="submit" [disabled]="contactForm.invalid">{{ isEditMode ? 'Update' : 'Add' }}</button>
+</form>
+
+<div class="contact-list">
+  <h3>Contacts List</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Designation</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.department }}</td>
+        <td>{{ contact.designation }}</td>
+        <td>{{ contact.phone }}</td>
+        <td>
+          <button (click)="onEdit(contact)">Edit</button>
+          <button *ngIf="contact.id" (click)="onDelete(contact.id!)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

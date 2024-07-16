@@ -1,0 +1,16 @@
+<section class="wrapper carousel-wrapper">
+  <div class="container common-container four_content carousel-container">
+    <div id="flexCarousel" class="flexslider carousel">
+      <ul class="slides">
+        <li *ngFor="let slide of visibleSlides" class="slide">
+          <a [href]="slide.url || '#'" target="_blank" title="Carousel Image">
+            <img [src]="slide.imageUrl" alt="Carousel Image">
+          </a>
+        </li>
+      </ul>
+    </div>
+    <button class="nav prev" (click)="goToPrevSlide()">&#10094;</button>
+    <button class="nav next" (click)="goToNextSlide()">&#10095;</button>
+    <button class="control" (click)="togglePause()">{{ isPaused ? '>' : '||' }}</button>
+  </div>
+</section>

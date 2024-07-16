@@ -1,0 +1,23 @@
+.gallery-container {
+  margin: 20px;
+}
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-item video {
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

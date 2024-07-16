@@ -1,0 +1,207 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+.header {
+  background-color: #ffffff;
+}
+
+.top-bar {
+  background-color: #ffffff;
+  padding: 0px 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gov-section, .nav-section {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.gov-india {
+  flex: 0 0 20%;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.ministry {
+  flex: 0 0 40%;
+  padding-left: 10px;
+}
+
+.nav-section:nth-child(3) {
+  flex: 0 0 10%;
+}
+
+.nav-section:nth-child(4) {
+  flex: 0 0 5%;
+}
+
+.nav-section:nth-child(5) {
+  flex: 0 0 5%;
+}
+
+.nav-section:nth-child(6) {
+  flex: 0 0 5%;
+}
+
+.hindi {
+  flex: 0 0 15%;
+}
+
+.gov-section a, .nav-section a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.gov-section::after, 
+.nav-section::after {
+  color: #000;
+  position: absolute;
+  right: -10px;
+}
+
+.gov-section:last-child::after, 
+.nav-section:last-child::after {
+  content: "";
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+}
+
+.nav-section .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  padding: 1px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-section:hover .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  margin-bottom: 10px;
+}
+
+.dropdown li:last-child {
+  margin-bottom: 0;
+}
+
+.dropdown a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+}
+
+.nav-section select {
+  padding: 5px;
+  font-size: 14px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 0 0 0;
+  background-color: #ffffff;
+}
+
+.header-wrapper {
+  background-color: #f8f9fa;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo p {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__logo p li {
+  list-style: none; 
+  margin: 0;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header__logo img {
+  margin-right: 10px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  font-size: large;
+}
+
+.right-content {
+  display: flex;
+}
+
+.float-element {
+  margin-right: 150px;
+}
+
+.float-element a {
+  display: block;
+}
+
+.float-element img {
+  width: 220px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gov-section, .nav-section {
+    margin: 5px 0;
+  }
+
+  .nav-section .dropdown {
+    left: auto;
+    right: 0;
+  }
+
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    margin-top: 20px;
+  }
+}

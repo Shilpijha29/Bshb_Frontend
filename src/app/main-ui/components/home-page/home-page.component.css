@@ -1,0 +1,183 @@
+/* Container for the entire home page */
+.home-container {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Styling for the photo gallery */
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
+}
+
+.photo-item {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.photo-text {
+  flex: 0 0 70%; /* 70% width for the text */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.photo-images {
+  flex: 0 0 30%; /* 30% width for the images */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.minister-item {
+  text-align: center;
+}
+
+.minister-item img {
+  width: 100%;
+  max-width: 100px; /* Limit the maximum width of the image */
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.minister-item span {
+  display: block;
+}
+
+/* Styling for the side links section */
+.side-links {
+  flex: 0 0 30%; /* 30% width for the side links */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.side-link {
+  flex: 1 1 calc(33.333% - 10px); /* Three columns with a gap of 10px */
+  max-width: calc(33.333% - 10px);
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.officer-img {
+  margin-bottom: 10px;
+}
+
+.officer-img img {
+  width: 100%;
+  max-width: 100px; /* Limit the maximum width of the image */
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Content section containing tab section and side links */
+.content-section {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+}
+
+/* Tab section */
+.tab-section {
+  flex: 3; /* Adjust width based on layout */
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.page-tab {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.page-tab-res {
+  margin-top: 10px;
+}
+
+/* Tab navigation */
+#parentHorizontalTab .resp-tabs-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid #ddd;
+}
+
+#parentHorizontalTab .resp-tabs-list li {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+#parentHorizontalTab .resp-tabs-list li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+#parentHorizontalTab .resp-tabs-list .resp-tab-active {
+  background-color: darkblue;
+}
+
+#parentHorizontalTab .resp-tabs-container {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.imt-logo {
+  width: 50%;
+  text-align: center;
+}
+
+.imt-logo img {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Styles for responsive view */
+@media (max-width: 768px) {
+  .content-section {
+    flex-direction: column;
+  }
+
+  .tab-section {
+    order: 2; /* Change order for mobile layout */
+  }
+
+  .side-link {
+    flex: 1 1 calc(50% - 5px); /* Two columns with a gap of 10px */
+    max-width: calc(50% - 5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .side-link {
+    flex: 1 1 100%; /* One column */
+    max-width: 100%;
+  }
+}

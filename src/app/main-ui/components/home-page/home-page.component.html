@@ -1,0 +1,115 @@
+<div class="home-container" id="mainContent">
+  <h1>WELCOME TO Ministry/Department</h1>
+   <!-- Photo Gallery Section -->
+  <div class="photo-gallery">
+    <div class="photo-item" *ngFor="let item of data">
+      <div class="photo-text">
+        <p><strong>{{ item.text }}</strong></p>
+      </div>
+      <div class="photo-images">
+        <!-- Chief Minister Image -->
+        <div class="minister-item">
+          <img [src]="item.chiefministerImageUrl" alt="Chief Minister Image">
+          <span>Chief Minister</span>
+          <span>{{ item.chiefministerName }}</span>
+        </div>
+        <!-- Department Minister Image -->
+        <div class="minister-item">
+          <img [src]="item.departmentministerImageUrl" alt="Department Minister Image">
+          <span>Department Minister</span>
+          <span>{{ item.departmentministerName }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="content-section">
+    <div class="wrapper home-banner tab-section">
+      <div class="container common-container four_content">
+        <div class="page-tab clearfix">
+          <div class="page-tab-res clearfix">
+            <div id="parentHorizontalTab">
+              <ul class="resp-tabs-list hor_1">
+                <li [class.resp-tab-active]="selectedTab === 0"><a (click)="selectTab(0)">Events</a></li>
+                <li [class.resp-tab-active]="selectedTab === 1"><a (click)="selectTab(1)">What's New</a></li>
+                <li [class.resp-tab-active]="selectedTab === 2"><a (click)="selectTab(2)">Awards</a></li>
+                <li [class.resp-tab-active]="selectedTab === 3"><a (click)="selectTab(3)">Press Releases</a></li>
+                <li [class.resp-tab-active]="selectedTab === 4"><a (click)="selectTab(4)">Tender</a></li>
+              </ul>
+              <div class="resp-tabs-container hor_1">
+                <div class="tab-content" *ngIf="selectedTab === 0">
+                  <ul class="content_list date-list">
+                    <li>
+                      <div class="date"><span>DD</span><em>MM-YYYY</em></div>
+                      <div class="list-content">An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves. An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves.
+
+                        An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves.</div>
+                    </li>
+                    <li>
+                      <div class="date"><span>DD</span><em>MM-YYYY</em></div>
+                      <div class="list-content">Description of Events 2 goes here.</div>
+                    </li>
+                    <li>
+                      <div class="date"><span>DD</span><em>MM-YYYY</em></div>
+                      <div class="list-content">An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves. An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves.
+
+                        An informative text section that outlines the work portfolio of the ministry and the initiatives/ schemes and other useful purpose that the ministry website serves.</div>
+                    </li>
+                  </ul>
+                  <div class="view-footer-tab"><a href="#" title="Click here to know more"><span>Read more</span></a></div>
+                </div>
+                <div class="tab-content" *ngIf="selectedTab === 1">
+                  <ul class="content_list list">
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of What's New 1 goes here.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of What's New 2 goes here.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of What's New 3 goes here.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of What's New 4 goes here.</a></li>
+                  </ul>
+                  <div class="view-footer-tab"><a href="#" title="Click here to know more"><span>Read more</span></a></div>
+                </div>
+                <div class="tab-content" *ngIf="selectedTab === 2">
+                  <ul class="content_list list">
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Awards 1 goes here.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Awards 2 goes here.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Awards 3 goes here.</a></li>
+                  </ul>
+                  <div class="view-footer-tab"><a href="#" title="Click here to know more"><span>Read more</span></a></div>
+                </div>
+                <div class="tab-content" *ngIf="selectedTab === 3">
+                  <ul class="content_list list">
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Press Releases 1 goes here dd-mm-yyy.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Press Releases 2 goes here dd-mm-yyy.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Press Releases 3 goes here dd-mm-yyy.</a></li>
+                  </ul>
+                  <div class="view-footer-tab"><a href="#" title="Click here to know more"><span>Read more</span></a></div>
+                </div>
+                <div class="tab-content" *ngIf="selectedTab === 4">
+                  <ul class="content_list list">
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Tender 1 goes here dd-mm-yyy - dd-mm-yyyy.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Tender 2 goes here dd-mm-yyy - dd-mm-yyyy.</a></li>
+                    <li><i class="fa fa-arrow-right"></i><a href="#">Description of Tender 3 goes here dd-mm-yyy - dd-mm-yyyy.</a></li>
+                  </ul>
+                  <div class="view-footer-tab"><a href="#" title="Click here to know more"><span>Read more</span></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <!-- Side Links Section -->
+    <div class="side-links clearfix">
+      <div class="side-link" *ngFor="let officer of officers">
+        <div class="officer-img">
+          <img *ngIf="officer.photoUrl" [src]="officer.photoUrl" alt="{{ officer.name }}" class="officer-img">
+        </div>
+        <div class="officer-info">
+          <h3>{{ officer.name }}</h3>
+          <p>{{ officer.designation }}</p>
+          <p>{{ officer.details }}</p>
+        </div>
+      </div>
+    </div>   
+  </div>
+</div>

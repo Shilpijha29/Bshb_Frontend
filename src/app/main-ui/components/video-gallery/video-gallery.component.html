@@ -1,0 +1,8 @@
+<div class="gallery-container">
+  <h1>Gallery Videos</h1>
+  <div class="video-gallery">
+    <div class="video-item" *ngFor="let video of videos">
+      <video [src]="video.videoUrl" controls></video>
+    </div>
+  </div>
+</div>

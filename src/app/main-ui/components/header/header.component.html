@@ -1,0 +1,69 @@
+<header class="header">
+  <div class="top-bar">
+    <div class="container">
+      <div class="row">
+        <div class="gov-section gov-india">
+          <a target="_blank" href="https://india.gov.in/hi" title="भारत सरकार ( बाहरी वेबसाइट जो एक नई विंडो में खुलती है)" lang="hi">भारत सरकार</a>
+        </div>
+        <div class="gov-section ministry">
+          <a target="_blank" href="https://india.gov.in/" title="Government of India, External Link that opens in a new window">Government of India</a>
+        </div>
+        <div class="nav-section">
+          <a href="javascript:void(0);" title="Skip to main content">Skip to main content</a>
+        </div>
+        <div class="nav-section">
+          <a id="toggleAccessibility" title="Accessibility Dropdown">
+            <img class="icon" src="assets/images/ico-accessibility.png" alt="Accessibility Dropdown" />
+          </a>
+          <ul class="dropdown">
+            <li><a onClick="set_font_size('increase')" title="Increase font size">A<sup>+</sup></a></li>
+            <li><a onClick="set_font_size()" title="Reset font size">A<sup>&nbsp;</sup></a></li>
+            <li><a onClick="set_font_size('decrease')" title="Decrease font size">A<sup>-</sup></a></li>
+          </ul>
+        </div>
+        <div class="nav-section">
+          <a id="toggleSocial" title="Social Medias">
+            <img class="icon" src="assets/images/ico-social.png" alt="Social Medias" />
+          </a>
+          <ul class="dropdown">
+            <li><a target="_blank" title="Facebook" href="http://www.facebook.com/"><img alt="Facebook Page" src="assets/images/ico-facebook.png"></a></li>
+            <li><a target="_blank" title="Twitter" href="http://www.twitter.com/"><img alt="Twitter Page" src="assets/images/ico-twitter.png"></a></li>
+            <li><a target="_blank" title="YouTube" href="http://www.youtube.com/"><img alt="YouTube Page" src="assets/images/ico-youtube.png"></a></li>
+          </ul>
+        </div>
+        <div class="nav-section">
+          <a routerLink="/sitemap" title="Sitemap"><img class="icon" src="assets/images/ico-sitemap.png" alt="Sitemap" /></a>
+        </div>
+        <div class="nav-section hindi">
+          <select title="Select Language">
+            <option>English</option>
+            <option>हिन्दी</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="wrapper header-wrapper" *ngIf="data">
+  <div class="container common-container four_content header-container">
+    <h2 class="logo">
+      <a [href]="data.url1" title="Home" rel="home" class="header__logo" id="logo">
+        <img *ngIf="data.imageUrl1" [src]="data.imageUrl1" alt="national emblem" class="national_emblem"> 
+        <p>
+          <li *ngIf="data.text1">{{ data.text1 }}</li> 
+          <li *ngIf="data.text2">{{ data.text2 }}</li> 
+        </p>
+      </a>
+    </h2>
+    <div class="header-right clearfix">
+      <div class="right-content clearfix">
+        <div class="float-element">
+          <a *ngIf="data.url2" class="sw-logo" [href]="data.url2" target="_blank" title="Swachh Bharat, External link that opens in a new window">
+            <img *ngIf="data.imageUrl2" [src]="data.imageUrl2" alt="Swachh Bharat"> 
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
